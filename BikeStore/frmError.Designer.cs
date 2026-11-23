@@ -30,9 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvError = new System.Windows.Forms.DataGridView();
-            this.bikeStoreDataSet = new BikeStore.BikeStoreDataSet();
-            this.errorLogBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.errorLogTableAdapter = new BikeStore.BikeStoreDataSetTableAdapters.ErrorLogTableAdapter();
             this.errorLogIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.errorTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,10 +39,21 @@
             this.errorProcedureDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.errorLineDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.errorMessageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.errorLogBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bikeStoreDataSet = new BikeStore.BikeStoreDataSet();
+            this.errorLogTableAdapter = new BikeStore.BikeStoreDataSetTableAdapters.ErrorLogTableAdapter();
             this.lblError = new System.Windows.Forms.Label();
+            this.dtpFrom = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvError)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bikeStoreDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorLogBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bikeStoreDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvError
@@ -66,7 +74,7 @@
             this.errorLineDataGridViewTextBoxColumn,
             this.errorMessageDataGridViewTextBoxColumn});
             this.dgvError.DataSource = this.errorLogBindingSource;
-            this.dgvError.Location = new System.Drawing.Point(12, 91);
+            this.dgvError.Location = new System.Drawing.Point(12, 178);
             this.dgvError.Name = "dgvError";
             this.dgvError.ReadOnly = true;
             this.dgvError.RowHeadersVisible = false;
@@ -74,20 +82,6 @@
             this.dgvError.RowTemplate.Height = 24;
             this.dgvError.Size = new System.Drawing.Size(776, 347);
             this.dgvError.TabIndex = 0;
-            // 
-            // bikeStoreDataSet
-            // 
-            this.bikeStoreDataSet.DataSetName = "BikeStoreDataSet";
-            this.bikeStoreDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // errorLogBindingSource
-            // 
-            this.errorLogBindingSource.DataMember = "ErrorLog";
-            this.errorLogBindingSource.DataSource = this.bikeStoreDataSet;
-            // 
-            // errorLogTableAdapter
-            // 
-            this.errorLogTableAdapter.ClearBeforeFill = true;
             // 
             // errorLogIDDataGridViewTextBoxColumn
             // 
@@ -161,29 +155,119 @@
             this.errorMessageDataGridViewTextBoxColumn.Name = "errorMessageDataGridViewTextBoxColumn";
             this.errorMessageDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // errorLogBindingSource
+            // 
+            this.errorLogBindingSource.DataMember = "ErrorLog";
+            this.errorLogBindingSource.DataSource = this.bikeStoreDataSet;
+            // 
+            // bikeStoreDataSet
+            // 
+            this.bikeStoreDataSet.DataSetName = "BikeStoreDataSet";
+            this.bikeStoreDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // errorLogTableAdapter
+            // 
+            this.errorLogTableAdapter.ClearBeforeFill = true;
+            // 
             // lblError
             // 
             this.lblError.AutoSize = true;
             this.lblError.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblError.Location = new System.Drawing.Point(12, 56);
+            this.lblError.Location = new System.Drawing.Point(12, 9);
             this.lblError.Name = "lblError";
             this.lblError.Size = new System.Drawing.Size(131, 32);
             this.lblError.TabIndex = 1;
             this.lblError.Text = "Error Log";
             // 
+            // dtpFrom
+            // 
+            this.dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFrom.Location = new System.Drawing.Point(133, 145);
+            this.dtpFrom.Name = "dtpFrom";
+            this.dtpFrom.Size = new System.Drawing.Size(109, 22);
+            this.dtpFrom.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(15, 150);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(116, 16);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Show Errors From:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(364, 150);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(27, 16);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "To:";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(397, 145);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(109, 22);
+            this.dateTimePicker1.TabIndex = 5;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePicker2.Location = new System.Drawing.Point(512, 145);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(109, 22);
+            this.dateTimePicker2.TabIndex = 6;
+            // 
+            // dateTimePicker3
+            // 
+            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePicker3.Location = new System.Drawing.Point(248, 145);
+            this.dateTimePicker3.Name = "dateTimePicker3";
+            this.dateTimePicker3.Size = new System.Drawing.Size(109, 22);
+            this.dateTimePicker3.TabIndex = 7;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(632, 144);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Filter";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(713, 144);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "Reset";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // frmError
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 537);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.dateTimePicker3);
+            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.dtpFrom);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.dgvError);
             this.Name = "frmError";
             this.Text = "frmError";
             this.Load += new System.EventHandler(this.frmError_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvError)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bikeStoreDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorLogBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bikeStoreDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -205,5 +289,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn errorLineDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn errorMessageDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label lblError;
+        private System.Windows.Forms.DateTimePicker dtpFrom;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
