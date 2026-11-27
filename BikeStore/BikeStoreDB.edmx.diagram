@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="615ffccf43314d2c86e33011c347d028" Name="Diagram1">
+        <EntityTypeShape EntityType="BikeStoreModel.ErrorLog" Width="1.5" PointX="2.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BikeStoreModel.User" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BikeStoreModel.Address" Width="1.5" PointX="0.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BikeStoreModel.Customer" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BikeStoreModel.CustomerAddress" Width="1.5" PointX="3" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BikeStoreModel.Product" Width="1.5" PointX="6" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BikeStoreModel.ProductCategory" Width="1.5" PointX="3.75" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="BikeStoreModel.ProductDescription" Width="1.5" PointX="3.75" PointY="18.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BikeStoreModel.ProductModel" Width="1.5" PointX="3.75" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BikeStoreModel.ProductModelProductDescription" Width="1.5" PointX="6" PointY="18.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BikeStoreModel.SalesOrderDetail" Width="1.5" PointX="8.25" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BikeStoreModel.SalesOrderHeader" Width="1.5" PointX="6" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BikeStoreModel.BuildVersion" Width="1.5" PointX="8.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BikeStoreModel.vGetAllCategory" Width="1.5" PointX="8.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BikeStoreModel.vProductAndDescription" Width="1.5" PointX="10.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BikeStoreModel.vProductModelCatalogDescription" Width="1.5" PointX="10.75" PointY="5.75" IsExpanded="true" />
+        <AssociationConnector Association="BikeStoreModel.FK_CustomerAddress_Address_AddressID" ManuallyRouted="false" />
+        <AssociationConnector Association="BikeStoreModel.FK_SalesOrderHeader_Address_BillTo_AddressID" ManuallyRouted="false" />
+        <AssociationConnector Association="BikeStoreModel.FK_SalesOrderHeader_Address_ShipTo_AddressID" ManuallyRouted="false" />
+        <AssociationConnector Association="BikeStoreModel.FK_CustomerAddress_Customer_CustomerID" ManuallyRouted="false" />
+        <AssociationConnector Association="BikeStoreModel.FK_SalesOrderHeader_Customer_CustomerID" ManuallyRouted="false" />
+        <AssociationConnector Association="BikeStoreModel.FK_Product_ProductCategory_ProductCategoryID" ManuallyRouted="false" />
+        <AssociationConnector Association="BikeStoreModel.FK_Product_ProductModel_ProductModelID" ManuallyRouted="false" />
+        <AssociationConnector Association="BikeStoreModel.FK_SalesOrderDetail_Product_ProductID" ManuallyRouted="false" />
+        <AssociationConnector Association="BikeStoreModel.FK_ProductCategory_ProductCategory_ParentProductCategoryID_ProductCategoryID" ManuallyRouted="false" />
+        <AssociationConnector Association="BikeStoreModel.FK_ProductModelProductDescription_ProductDescription_ProductDescriptionID" ManuallyRouted="false" />
+        <AssociationConnector Association="BikeStoreModel.FK_ProductModelProductDescription_ProductModel_ProductModelID" ManuallyRouted="false" />
+        <AssociationConnector Association="BikeStoreModel.FK_SalesOrderDetail_SalesOrderHeader_SalesOrderID" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -28,97 +28,74 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblUserName = new System.Windows.Forms.Label();
-            this.txtUserName = new System.Windows.Forms.TextBox();
-            this.lblPassword = new System.Windows.Forms.Label();
-            this.lblLogin = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
+            this.txtUsername = new System.Windows.Forms.TextBox();
             this.btnSignIn = new System.Windows.Forms.Button();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // lblUserName
+            // txtUsername
             // 
-            this.lblUserName.AutoSize = true;
-            this.lblUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserName.Location = new System.Drawing.Point(46, 103);
-            this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(73, 16);
-            this.lblUserName.TabIndex = 0;
-            this.lblUserName.Text = "Username:";
-            // 
-            // txtUserName
-            // 
-            this.txtUserName.Location = new System.Drawing.Point(43, 122);
-            this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(256, 20);
-            this.txtUserName.TabIndex = 1;
-            // 
-            // lblPassword
-            // 
-            this.lblPassword.AutoSize = true;
-            this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(46, 163);
-            this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(67, 16);
-            this.lblPassword.TabIndex = 2;
-            this.lblPassword.Text = "Password";
-            // 
-            // lblLogin
-            // 
-            this.lblLogin.AutoSize = true;
-            this.lblLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogin.Location = new System.Drawing.Point(120, 29);
-            this.lblLogin.Name = "lblLogin";
-            this.lblLogin.Size = new System.Drawing.Size(96, 37);
-            this.lblLogin.TabIndex = 4;
-            this.lblLogin.Text = "Login";
-            this.lblLogin.Click += new System.EventHandler(this.lblLogin_Click);
+            this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtUsername.Location = new System.Drawing.Point(49, 118);
+            this.txtUsername.MaxLength = 50;
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(256, 20);
+            this.txtUsername.TabIndex = 2;
+            this.txtUsername.TextChanged += new System.EventHandler(this.txtUserName_TextChanged);
+            this.txtUsername.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUsername_KeyDown);
             // 
             // btnSignIn
             // 
-            this.btnSignIn.Location = new System.Drawing.Point(119, 238);
+            this.btnSignIn.Enabled = false;
+            this.btnSignIn.Location = new System.Drawing.Point(120, 202);
             this.btnSignIn.Name = "btnSignIn";
-            this.btnSignIn.Size = new System.Drawing.Size(106, 26);
+            this.btnSignIn.Size = new System.Drawing.Size(103, 25);
             this.btnSignIn.TabIndex = 5;
             this.btnSignIn.Text = "Sign In";
             this.btnSignIn.UseVisualStyleBackColor = true;
+            this.btnSignIn.Click += new System.EventHandler(this.btnSignIn_Click);
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(43, 182);
+            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPassword.Location = new System.Drawing.Point(49, 165);
+            this.txtPassword.MaxLength = 70;
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '●';
             this.txtPassword.Size = new System.Drawing.Size(256, 20);
-            this.txtPassword.TabIndex = 6;
+            this.txtPassword.TabIndex = 4;
+            this.txtPassword.UseSystemPasswordChar = true;
+            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
+            this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
             // 
             // frmLogin
             // 
+            this.AcceptButton = this.btnSignIn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::BikeStore.Properties.Resources.Modern_Bike_Store_Login_Screen;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(342, 292);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.btnSignIn);
-            this.Controls.Add(this.lblLogin);
-            this.Controls.Add(this.lblPassword);
-            this.Controls.Add(this.txtUserName);
-            this.Controls.Add(this.lblUserName);
+            this.Controls.Add(this.txtUsername);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bike Store";
+            this.Activated += new System.EventHandler(this.frmLogin_Activated);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmLogin_FormClosing);
+            this.Load += new System.EventHandler(this.frmLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblUserName;
-        private System.Windows.Forms.TextBox txtUserName;
-        private System.Windows.Forms.Label lblPassword;
-        private System.Windows.Forms.Label lblLogin;
+        private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Button btnSignIn;
         private System.Windows.Forms.TextBox txtPassword;
     }
